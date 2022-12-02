@@ -1,0 +1,36 @@
+﻿@model EmployeeDepartmentProject.Models.Employee
+@{
+    ViewData["Title"] = "Create";
+}
+<form method="post">
+<fieldset>
+    <legend>Create Employee Table</legend>
+@*    <div class="form-group mb-3">
+        <label class="form-label mt-4">Employee ID</label>
+        <input type="number" class="form-control" id="exampleInputEmail1" placeholder="Enter EmployeeID">
+        <span asp-validation-for="DepartmentID" class="text-danger"></span>
+    </div>*@
+    <div class="form-group">
+        <label asp-for="EmployeeName" class="form-label mt-4">Employee Name</label>
+        <input asp-for="EmployeeName" type="text" class="form-control" placeholder="Enter Employee Name">
+        <span asp-validation-for="EmployeeName" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="EmployeeSalary" class="form-label mt-4">Employee Salary</label>
+        <input asp-for="EmployeeSalary" type="number" class="form-control" id="exampleInputPassword1" placeholder="Enter Employee Salary">
+        <span asp-validation-for="EmployeeSalary" class="text-danger"></span>
+    </div>
+        <div class="form-group">
+            <label asp-for="DepartID" class="form-label mt-4">Department Name</label>
+            <select asp-for="DepartID" asp-items="ViewBag.Department" type="number" class="form-control" id="exampleInputPassword1" ></select>
+            <span asp-validation-for="DepartID" class="text-danger"></span>
+        </div>
+    <div class="form-group">
+        <button type="submit" class="btn btn-primary" style="width:120px">Create</button>
+        <a asp-controller="Employee" asp-action="Index" class="btn btn-secondary" style="width:120px">Back</a>
+    </div>
+</fieldset>
+</form>
+@section Scripts{
+    <partial name="_ValidationScriptsPartial.cshtml" />
+}

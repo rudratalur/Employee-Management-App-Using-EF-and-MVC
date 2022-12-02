@@ -1,0 +1,28 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+    margin-bottom: 60px;
+    background-image: url("https://t3.ftcdn.net/jpg/03/91/46/10/240_F_391461057_5P0BOWl4lY442Zoo9rzEeJU0S2c1WDZR.jpg");
+    /*backgroud-repeat: none;*/
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+/*#HomepageBody {
+    background-image: url("https://www.google.com/url?sa=i&url=https%3A%2F%2Fpngtree.com%2Ffreebackground%2Fstaff-management-system--posters--background-material_862529.html&psig=AOvVaw3rC9VA7h_wFw48xFUPcgMT&ust=1669775784800000&source=images&cd=vfe&ved=0CAwQjRxqFwoTCNDP8tWt0vsCFQAAAAAdAAAAABAE" );
+    background-repeat: no-repeat;
+    background-position: center;
+}*/

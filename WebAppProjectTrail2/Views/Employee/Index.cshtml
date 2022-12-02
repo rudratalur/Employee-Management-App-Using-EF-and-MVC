@@ -1,0 +1,66 @@
+﻿@model IEnumerable<EmployeeDepartmentProject.Models.Employee>
+@{
+    ViewData["Title"] = "Index";
+}
+<partial name="_AlertPartial" />
+<div class="container p-3">
+    <div class="row pt-4">
+        <div class="col-6">
+            <h2 class="text-primary">Employee List <i class="bi bi-person-lines-fill small"></i></h2>
+        </div>
+        <div class="col-6 text-end">
+            <a asp-controller="Employee" asp-action="Create" class="btn btn-primary"><i class="bi bi-plus-square-fill">Create</i></a>
+
+        </div>
+    </div>
+</div>
+@*<form method="get" asp-action="Index">
+    <p>
+        <input type="search" placeholder="Enter employee name to search" value="[@ViewBag.GetEmployeedetails]" name="Empsearch" style="width:500px;" />
+        <input type="submit" value="Search" class="btn btn-primary" />
+        <a asp-action="Index">Get all emp</a>
+    </p>
+
+</form>*@
+
+<table class="table table-bordered table-striped style="width:100%">
+    <thead>
+        <tr>
+            <th>
+                Employee ID
+            </th>
+            <th>
+                Employee Name
+            </th>
+            <th>
+                Employee Salary
+            </th>
+            <th>
+                Department Name
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var c in Model)
+        {
+            <tr>
+                <td><a asp-controller="Employee" asp-action="Details" asp-route-id="@c.EmployeeId">@c.EmployeeId</a></td>
+                <td>@c.EmployeeName</td>
+                <td>@c.EmployeeSalary</td>
+                <td>@c.Departments.DepartName</td>
+                <td>
+                    <div class="btnbtn-group m-75" role="group">
+                        <a asp-controller="Employee" asp-action="Edit" asp-route-employeeId="@c.EmployeeId" class="btn btn-outline-primary"><i class="bi bi-pencil-square"></i> Edit</a>
+                        <a asp-controller="Employee" asp-action="Delete" asp-route-id="@c.EmployeeId" class="btn btn-outline-danger"><i class="bi bi-trash-fill"></i> Delete</a>
+                    </div>
+                </td>
+
+            </tr>
+        }
+    </tbody>
+
+</table>
+
+
+
+
